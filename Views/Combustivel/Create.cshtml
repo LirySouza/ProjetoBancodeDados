@@ -1,0 +1,43 @@
+﻿@model ProjetoBancodeDados.Models.Combustivel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Cadastrar</h1>
+
+<h4>Combustivel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomeCombustivel" class="control-label">Nome Combutível</label>
+                <input asp-for="NomeCombustivel" class="form-control"  />
+                <span asp-validation-for="NomeCombustivel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoCombustivel" class="control-label">Tipo do Combutível</label>
+                <input asp-for="TipoCombustivel" class="form-control" />
+                <span asp-validation-for="TipoCombustivel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecoCombustivel" class="control-label">Preço do Combustível</label>
+                <input asp-for="PrecoCombustivel" class="form-control" type="number" />
+                <span asp-validation-for="PrecoCombustivel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn-primary" asp-action="Index">Voltar à Lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

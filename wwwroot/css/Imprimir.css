@@ -1,0 +1,37 @@
+body{
+    border:0;
+    margin:0;
+}
+.cx1{
+    text-align:center;
+    margin-top:50px;
+}
+.cx2 {
+    width: 750px;
+    height: 550px;
+    margin: 0 auto;
+    text-align:center;
+    font-size:30px;
+}
+.cxn1{
+    display:flex;
+    text-align:center;
+    margin-left:10px;
+    font-size:20px;
+    margin-bottom:10px;
+}
+a{
+    text-decoration:none;
+    color:black;
+}
+.btn{
+    margin-right:540px;
+}
+.btn-primary {
+    background-color: #2E7038;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    color:white;
+    font-size:17px;
+}

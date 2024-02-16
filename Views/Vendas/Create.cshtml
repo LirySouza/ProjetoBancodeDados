@@ -1,0 +1,49 @@
+﻿@model ProjetoBancodeDados.Models.Vendas
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Cadastrar</h1>
+
+<h4>Vendas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClienteId" class="control-label">Nome do Cliente</label>
+                <select asp-for="ClienteId" class ="form-control" asp-items="ViewBag.ClienteId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuantidadeLitros" class="control-label">Quantidade de Litros</label>
+                <input asp-for="QuantidadeLitros" class="form-control" />
+                <span asp-validation-for="QuantidadeLitros" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BombaId" class="control-label">Bomba</label>
+                <select asp-for="BombaId" class ="form-control" asp-items="ViewBag.BombaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CombustivelId" class="control-label">Combustível</label>
+                <select asp-for="CombustivelId" class ="form-control" asp-items="ViewBag.CombustivelId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FuncionariosId" class="control-label">Funcionários</label>
+                <select asp-for="FuncionariosId" class ="form-control" asp-items="ViewBag.FuncionariosId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn-primary" asp-action="Index">Voltar à Lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

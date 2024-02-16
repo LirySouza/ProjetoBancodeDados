@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProjetoBancodeDados.Models.Combustivel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cadastrar</h1>
+
+<p>
+    <a class="btn-primary" asp-action="Create">Cadastrar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeCombustivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoCombustivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecoCombustivel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeCombustivel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoCombustivel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecoCombustivel)
+            </td>
+            <td>
+                    <a class="btn-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a class="btn-primary" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                    <a class="btn-primary" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

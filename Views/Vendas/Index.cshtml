@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ProjetoBancodeDados.Models.Vendas>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cadastrar</h1>
+
+<p>
+    <a class="btn-primary" asp-action="Create">Cadastrar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantidadeLitros)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bomba)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Combustivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Funcionarios)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.NomeCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantidadeLitros)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Bomba.NumeroBomba)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Combustivel.NomeCombustivel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Funcionarios.NomeFuncionario)
+            </td>
+            <td>
+                    <a class="btn-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a class="btn-primary" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                    <a class="btn-primary" asp-action="Delete" asp-route-id="@item.Id">Deletar</a> |
+                    <a class="btn-primary" asp-action="Imprimir" target="_blank" asp-route-id="@item.Id">Imprimir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
